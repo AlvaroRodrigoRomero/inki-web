@@ -1,0 +1,1 @@
+Personal project where I will build my own website CV/Resume type using React.js
