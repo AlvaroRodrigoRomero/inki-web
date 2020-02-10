@@ -1,6 +1,6 @@
-import React, { Comment } from 'react'
+import React, { Component } from 'react'
 
-class Json extends Comment {
+class Json extends Component {
     render() {
         const jsonData = {
             "Home": {
@@ -104,6 +104,8 @@ class Json extends Comment {
                 { "id": 8, "active": "", "name": "Contact", "href": "contact" }
             ]
         };
+        window.JsonData = jsonData;
+        return(<div></div>);
     }
 }
 

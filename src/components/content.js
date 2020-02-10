@@ -16,7 +16,7 @@ class Content extends Component {
         return (
             sectionList.map((section, i) => {
                 return (
-                    <Section
+                    <Section key={i}
                         name={section.name}
                         class={section.name}
                     />

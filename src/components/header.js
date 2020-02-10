@@ -5,17 +5,6 @@ import ImageButton from '../components/buttons/imageButton'
 
 class Header extends Component {
   render() {
-    const dataNavItems = [
-      { 'id': 1, 'active': 'active', 'name': 'Home', 'href': 'home' },
-      { 'id': 2, 'active': '', 'name': 'About', 'href': 'about' },
-      { 'id': 3, 'active': '', 'name': 'Skills', 'href': 'skills' },
-      { 'id': 4, 'active': '', 'name': 'Experience', 'href': 'experience' },
-      { 'id': 5, 'active': '', 'name': 'Portfolio', 'href': 'portfolio' },
-      { 'id': 6, 'active': '', 'name': 'Pricing', 'href': 'pricing' },
-      { 'id': 7, 'active': '', 'name': 'Blog', 'href': 'blog' },
-      { 'id': 8, 'active': '', 'name': 'Contact', 'href': 'contact' }
-    ];
-
     return (
       <header className="black-bg mh-header mh-fixed-nav nav-scroll mh-xs-mobile-nav wow fadeInUp" id="mh-header">
         <div className="overlay"></div>
@@ -33,7 +22,7 @@ class Header extends Component {
               </button>
               <div className="collapse navbar-collapse" id="navbarSupportedContent">
                 <ul className="navbar-nav mr-0 ml-auto">
-                  {dataNavItems.map((navItem, i) => {
+                  {this.props.NavItems.map((navItem, i) => {
                     return <NavItem key={navItem.id}
                       active={navItem.active}
                       name={navItem.name}
