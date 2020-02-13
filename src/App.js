@@ -1,17 +1,22 @@
 import React from 'react';
-import logo from './logo.svg';
-import './App.css';
+import './assets/icons/font-awesome-4.7.0/css/font-awesome.min.css'
+import './assets/plugins/css/bootstrap.min.css'
+import './assets/plugins/css/animate.css'
+import './assets/plugins/css/owl.css'
+import './assets/plugins/css/jquery.fancybox.min.css'
+import './assets/css/styles.css'
+import './assets/css/responsive.css'
+import './assets/css/colors/blue.css'
 import Header from './components/header'
 import Footer from './components/footer'
 import Content from './components/content'
 import Scripts from './components/scripts'
-import { render } from '@testing-library/react';
 
 function App() {
   var jsonData = {
     "Home": {
-      "name": "Alvaro Rodrigo Romero",
-      "bobTitle": "Senior Software Engineer",
+      "name": "Álvaro Rodrigo Romero",
+      "jobTitle": "Senior Software Engineer",
       "email": "alvaro.rodrigo.romero@gmail.com",
       "phone": "+34 677788462",
       "location": "Madrid, Spain",
@@ -113,7 +118,7 @@ function App() {
   return (
     <div className="App">
       <Header NavItems={jsonData.NavItems} />
-      <Content />
+      <Content Data={jsonData} />
       <Footer />
       <Scripts />
     </div>

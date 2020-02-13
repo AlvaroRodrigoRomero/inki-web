@@ -1,4 +1,3 @@
-// import React from 'react'
 import React, { Component } from 'react';
 import NavItem from './header/navItem'
 import ImageButton from '../components/buttons/imageButton'
