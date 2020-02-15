@@ -1,35 +1,38 @@
-import React from 'react'
+import React, { Component } from 'react'
 import ContactCards from './footer/contactCards'
 import ContactForm from './footer/contactForm'
+import LinkIcon from '../components/linkIcons'
 
-function Footer() {
-    return (
-        <div>
-            <footer class="mh-footer mh-footer-3" id="mh-contact">
-                <div class="container-fluid">
-                    <div class="row section-separator">
-                        <div class="col-sm-12 section-title wow fadeInUp" data-wow-duration="0.8s" data-wow-delay="0.2s">
-                            <h3>Contact Me</h3>
-                        </div>
-                        <div class="map-image image-bg col-sm-12">
-                            <div class="container mt-30">
-                                <div class="row">
-                                    <ContactCards />
-                                    <ContactForm />
-                                    <div class="col-sm-12 mh-copyright wow fadeInUp" data-wow-duration="0.8s" data-wow-delay="0.2s">
-                                        <div class="row">
-                                            <div class="col-sm-6">
-                                                <div class="text-left text-xs-center">
-                                                    <p>All right reserved Álvaro Rodrigo Romero @ 2020</p>
+class Footer extends Component {
+    render() {
+        const data = this.props.Data;
+        return (
+            <div>
+                <footer className="mh-footer mh-footer-3" id="mh-contact">
+                    <div className="container-fluid">
+                        <div className="row section-separator">
+                            <div className="col-sm-12 section-title wow fadeInUp" data-wow-duration="0.8s" data-wow-delay="0.2s">
+                                <h3>Contact Me</h3>
+                            </div>
+                            <div className="map-image image-bg col-sm-12">
+                                <div className="container mt-30">
+                                    <div className="row">
+                                        <ContactCards Data={data}/>
+                                        <ContactForm />
+                                        <div className="col-sm-12 mh-copyright wow fadeInUp" data-wow-duration="0.8s" data-wow-delay="0.2s">
+                                            <div className="row">
+                                                <div className="col-sm-6">
+                                                    <div className="text-left text-xs-center">
+                                                        <p>All right reserved Álvaro Rodrigo Romero @ 2020</p>
+                                                    </div>
                                                 </div>
-                                            </div>
-                                            <div class="col-sm-6">
-                                                <ul class="social-icon">
-                                                    <li><a href=""><i class="fa fa-facebook"></i></a></li>
-                                                    <li><a href=""><i class="fa fa-twitter"></i></a></li>
-                                                    <li><a href=""><i class="fa fa-github"></i></a></li>
-                                                    <li><a href=""><i class="fa fa-dribbble"></i></a></li>
-                                                </ul>
+                                                <div className="col-sm-6">
+                                                    <ul className="social-icon">
+                                                        {data.contactIcons.map((icon, i) => {
+                                                            return <LinkIcon key={i} icon={icon} />
+                                                        })}
+                                                    </ul>
+                                                </div>
                                             </div>
                                         </div>
                                     </div>
@@ -37,10 +40,10 @@ function Footer() {
                             </div>
                         </div>
                     </div>
-                </div>
-            </footer>
-        </div>
-    );
+                </footer>
+            </div>
+        );
+    }
 }
 
 export default Footer

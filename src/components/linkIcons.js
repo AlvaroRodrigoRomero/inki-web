@@ -5,7 +5,7 @@ class LinkIcon extends Component {
         const icon = this.props.icon;
         return (
             <li>
-                <a href={icon.href} target="_blank" ><i class={"fa fa-" + icon.name}></i></a>
+                <a href={icon.href} target="_blank" rel="noopener noreferrer"><i className={"fa fa-" + icon.name}></i></a>
             </li>
         );
     }
